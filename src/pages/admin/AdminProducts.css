@@ -1,0 +1,153 @@
+/* ── Admin Products ────────────────────────────────── */
+.ap-filter-tabs {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.ap-tab {
+  padding: 0.35rem 0.9rem;
+  border-radius: 99px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.ap-tab:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.ap-tab.active { background: var(--color-primary-dark); border-color: var(--color-primary-dark); color: #fff; }
+
+/* Product cell */
+.ap-product-cell { display: flex; align-items: center; gap: 0.75rem; }
+.ap-emoji { font-size: 1.6rem; width: 36px; text-align: center; }
+.ap-product-cell strong { display: block; font-size: 0.88rem; }
+.ap-sub { font-size: 0.72rem; color: #aaa; display: block; }
+
+.ap-price { font-weight: 700; color: var(--color-primary-dark); }
+.ap-bulk { font-size: 0.78rem; color: #16a34a; }
+
+/* Toggle */
+.ap-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: none;
+  background: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.2rem 0;
+}
+.ap-toggle.available { color: #16a34a; }
+.ap-toggle.unavailable { color: #ef4444; }
+
+.ap-actions { display: flex; align-items: center; gap: 0.4rem; }
+
+/* Skeleton */
+.ap-loading { padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.ap-row-skeleton {
+  height: 52px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  border-radius: 8px;
+  animation: shimmer 1.4s infinite;
+}
+
+/* ── Modal ─────────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 500;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 1rem;
+  overflow-y: auto;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 640px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h2 { font-family: var(--font-serif); font-size: 1.1rem; margin: 0; }
+.modal-header button { background: none; border: none; cursor: pointer; color: #888; padding: 0.25rem; }
+.modal-header button:hover { color: #111; }
+
+.modal-body { padding: 1.5rem; }
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.mf-field { display: flex; flex-direction: column; gap: 0.3rem; }
+.mf-field.mf-full { grid-column: 1 / -1; }
+
+.mf-field label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mf-hint { font-size: 0.7rem; font-weight: 400; color: #aaa; }
+
+.mf-field input,
+.mf-field select,
+.mf-field textarea {
+  padding: 0.6rem 0.8rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-family: var(--font-sans);
+  outline: none;
+  transition: border-color 0.15s;
+  background: #f9fafb;
+}
+
+.mf-field input:focus,
+.mf-field select:focus,
+.mf-field textarea:focus { border-color: var(--color-accent); background: #fff; }
+
+.toggle-label {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.toggle-label input { width: auto; accent-color: var(--color-accent); }
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+@media (max-width: 500px) {
+  .modal-grid { grid-template-columns: 1fr; }
+}

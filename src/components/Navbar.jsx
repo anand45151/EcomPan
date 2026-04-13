@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { ShoppingCart, User, Menu, X } from 'lucide-react';
 
@@ -33,12 +34,11 @@ const Navbar = () => {
         </ul>
 
         <div className="navbar-actions">
-          <button className="client-login-btn">Client Login</button>
-          <button className="icon-btn" aria-label="Cart">
+          <Link to="/login" className="client-login-btn">Client Login</Link>
+          <Link to="/cart" className="icon-btn" aria-label="Cart">
             <ShoppingCart size={19} />
-            <span className="cart-badge">3</span>
-          </button>
-          <button className="icon-btn" aria-label="Account"><User size={19} /></button>
+          </Link>
+          <Link to="/login" className="icon-btn" aria-label="Account"><User size={19} /></Link>
           <button
             className="icon-btn hamburger"
             aria-label="Menu"

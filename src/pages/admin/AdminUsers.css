@@ -1,0 +1,78 @@
+/* ── Admin Users ───────────────────────────────────── */
+.au-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0 0.9rem;
+  margin-bottom: 1.25rem;
+  max-width: 400px;
+}
+.au-search svg { color: #aaa; }
+.au-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0.6rem 0;
+  font-size: 0.88rem;
+  font-family: var(--font-sans);
+}
+
+.au-user-cell { display: flex; align-items: center; gap: 0.75rem; }
+
+.au-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid #e5e7eb;
+}
+
+.au-avatar-placeholder {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-background);
+  border: 1.5px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.au-user-cell strong { display: block; font-size: 0.875rem; }
+
+.au-email {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.au-business {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.82rem;
+  color: var(--color-primary-dark);
+  font-weight: 500;
+}
+
+.au-phone {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.82rem;
+  color: #555;
+}
+
+.au-na { color: #ddd; font-size: 0.85rem; }
+
+.au-admin { background: rgba(160,129,60,0.12); color: var(--color-accent); }
+.au-customer { background: #dbeafe; color: #3b82f6; }

@@ -1,0 +1,124 @@
+/* ── Admin Orders ──────────────────────────────────── */
+.ao-status-tabs {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.ao-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 99px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.ao-tab:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.ao-tab.active { background: var(--color-primary-dark); border-color: var(--color-primary-dark); color: #fff; }
+.ao-tab-count {
+  background: rgba(0,0,0,0.08);
+  border-radius: 99px;
+  padding: 0.05rem 0.4rem;
+  font-size: 0.72rem;
+}
+.ao-tab.active .ao-tab-count { background: rgba(255,255,255,0.2); }
+
+.ao-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0 0.9rem;
+  margin-bottom: 1.25rem;
+  max-width: 360px;
+}
+.ao-search svg { color: #aaa; }
+.ao-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0.6rem 0;
+  font-size: 0.88rem;
+  font-family: var(--font-sans);
+}
+
+.ao-order-num { font-weight: 700; font-size: 0.82rem; font-family: monospace; }
+.ao-amount { font-weight: 700; color: var(--color-primary-dark); }
+
+.ao-pay { font-size: 0.75rem; font-weight: 700; text-transform: capitalize; }
+.ao-pay.paid { color: #16a34a; }
+.ao-pay.failed { color: #ef4444; }
+.ao-pay.pending { color: #f59e0b; }
+
+/* Order Modal */
+.order-modal { max-width: 560px; }
+.order-modal-date { font-size: 0.78rem; color: #aaa; margin: 0.2rem 0 0; }
+
+.order-modal-body { padding: 1.25rem 1.5rem; }
+
+.om-section {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+.om-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.om-section h4 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+  margin: 0 0 0.75rem;
+}
+
+.om-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.4rem 0;
+  font-size: 0.85rem;
+}
+.om-item span:first-child { font-size: 1.2rem; flex-shrink: 0; }
+.om-item div { flex: 1; }
+.om-item strong { display: block; font-size: 0.85rem; }
+.om-item div span { font-size: 0.75rem; color: #aaa; }
+.om-sub { font-weight: 700; font-size: 0.85rem; }
+
+.om-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  padding-top: 0.5rem;
+  border-top: 1px solid #f3f4f6;
+  margin-top: 0.25rem;
+}
+
+.om-addr { font-size: 0.85rem; color: #555; line-height: 1.5; }
+.om-na { font-size: 0.85rem; color: #aaa; }
+
+.om-pay { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.85rem; color: #555; }
+.om-pay code { font-size: 0.75rem; background: #f3f4f6; padding: 0.1rem 0.4rem; border-radius: 4px; }
+
+.om-status-row { display: flex; gap: 0.75rem; align-items: center; }
+.om-status-row select {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-family: var(--font-sans);
+  outline: none;
+  background: #f9fafb;
+}
+.om-status-row select:focus { border-color: var(--color-accent); }
