@@ -1,0 +1,225 @@
+/* ── Navbar Base ─────────────────────────────────── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 1.25rem 0;
+  background: transparent;
+  color: var(--color-text-light);
+  transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.navbar--scrolled {
+  padding: 0.75rem 0;
+  background: rgba(10, 23, 17, 0.82);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.navbar-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Logo ────────────────────────────────────────── */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.logo-icon {
+  font-size: 1.6rem;
+  filter: drop-shadow(0 0 6px rgba(160, 129, 60, 0.35));
+  transition: transform 0.4s;
+}
+
+.navbar-logo:hover .logo-icon {
+  transform: rotate(-15deg) scale(1.15);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-main {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 1.1;
+}
+
+.logo-sub {
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: var(--color-accent);
+  opacity: 0.85;
+}
+
+/* ── Links ───────────────────────────────────────── */
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.navbar-links li a {
+  position: relative;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.3px;
+  transition: color 0.3s;
+  padding-bottom: 4px;
+}
+
+.navbar-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background: var(--color-accent);
+  transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.navbar-links li a:hover {
+  color: #fff;
+}
+
+.navbar-links li a:hover::after {
+  width: 100%;
+}
+
+/* ── Actions ─────────────────────────────────────── */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.client-login-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  padding: 0.5rem 1.35rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 6px;
+  letter-spacing: 0.3px;
+  transition: all 0.35s;
+}
+
+.client-login-btn:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(160, 129, 60, 0.3);
+}
+
+.icon-btn {
+  position: relative;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.cart-badge {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.hamburger {
+  display: none;
+}
+
+/* ── Mobile ──────────────────────────────────────── */
+@media (max-width: 900px) {
+  .navbar-container {
+    padding: 0 2rem;
+  }
+
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 23, 17, 0.96);
+    backdrop-filter: blur(24px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 99;
+  }
+
+  .navbar-links--open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .navbar-links li a {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: var(--font-serif);
+  }
+
+  .client-login-btn {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    z-index: 101;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 1.25rem;
+  }
+  .logo-main {
+    font-size: 1.1rem;
+  }
+}

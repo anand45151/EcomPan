@@ -1,0 +1,158 @@
+.partnerships {
+  padding: 6rem 0 8rem;
+  background-color: var(--color-background);
+}
+
+.partnerships-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.partnerships-desc {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.partnerships-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.partner-card {
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-card {
+  position: relative;
+  min-height: 500px;
+  justify-content: flex-end;
+  color: #fff;
+}
+
+.main-card-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('/restaurant_interior.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.main-card-bg::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(10,23,17,0.9) 0%, rgba(10,23,17,0.2) 60%);
+}
+
+.main-card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.main-card-content h3 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+.main-card-content p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 2rem;
+  max-width: 90%;
+}
+
+.btn-light {
+  background: #fff;
+  color: var(--color-primary-dark);
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 4px;
+}
+
+.partner-subgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.small-card {
+  padding: 2.5rem 2rem;
+}
+
+.bg-light {
+  background-color: #eeebe3;
+  color: var(--color-text-dark);
+}
+
+.bg-accent {
+  background-color: #6b5a26; /* A darker olive/brown based on screenshot */
+  color: #fff;
+}
+
+.card-icon {
+  margin-bottom: 1.5rem;
+}
+
+.small-card h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.small-card p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.wide-card {
+  grid-column: span 2;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 3rem;
+}
+
+.bg-white {
+  background-color: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.wide-card h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.wide-card p {
+  font-size: 0.95rem;
+  color: #666;
+  max-width: 80%;
+}
+
+.wide-card-icon-wrap {
+  border: 1px solid #eee;
+  border-radius: 50%;
+  width: 60px; height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .partnerships-grid, .partner-subgrid {
+    grid-template-columns: 1fr;
+  }
+  .wide-card {
+    grid-column: span 1;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .wide-card-icon-wrap {
+    margin-top: 1.5rem;
+  }
+}
