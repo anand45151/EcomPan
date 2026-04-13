@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 import { AuthProvider } from './context/AuthContext';
 import { RequireAuth, RequireAdmin } from './components/ui/ProtectedRoute';
 
@@ -26,6 +27,7 @@ import AdminUsers from './pages/admin/AdminUsers';
 
 function App() {
   return (
+    <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
     <BrowserRouter>
       <AuthProvider>
         <Toaster
@@ -63,6 +65,7 @@ function App() {
         </Routes>
       </AuthProvider>
     </BrowserRouter>
+    </GoogleOAuthProvider>
   );
 }
 

@@ -13,12 +13,8 @@ export default function LoginPage() {
     if (user) navigate(from, { replace: true });
   }, [user, navigate, from]);
 
-  async function handleGoogleLogin() {
-    try {
-      await loginWithGoogle();
-    } catch (_) {
-      // toast is shown inside loginWithGoogle
-    }
+  function handleGoogleLogin() {
+    loginWithGoogle();
   }
 
   if (loading) return null;
